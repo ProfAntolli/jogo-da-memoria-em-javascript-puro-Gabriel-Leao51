@@ -1,0 +1,73 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../images/sky.jpg');
+    background-size: grid;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 610px;
+    padding: 15px;
+    color:white;
+    margin: 0 0 15px;
+    border-radius: 5px;
+    background-color: rgb(37, 0, 32,0.8)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 100%;    
+    max-width: 610px;
+    margin: 0 auto;  
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    position:relative;    
+    border-radius: 2px;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+    background-color: rgb(37, 1, 42);
+}
+
+.face {
+   width: 100%;
+   height: 100%;
+   border: 2px solid rgb(0, 0, 0);
+   border-radius: 2px;
+   background-size: cover;
+   position: absolute;
+   transition: all 400ms ease;
+}
+
+.front {    
+    transform: rotateY(180deg);
+    background-position: center;
+}
+
+.back {
+    background-image: url('../images/back.jpg');
+    background-position: center;
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter:saturate(0);
+    opacity: 0.5;
+}
